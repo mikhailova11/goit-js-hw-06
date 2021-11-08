@@ -41,9 +41,9 @@ function onFormSubmit(event) {
     }
 
     userInformation.password = password.value;
-    userInformation.email = email.valueж
+    userInformation.email = email.value;
 
-    console.log(userInformation)
+    console.log(userInformation);
  
 
    form.reset(); // очищает форму 
