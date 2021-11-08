@@ -12,6 +12,13 @@ const spanEl = document.querySelector('span');
 
 inputEl.addEventListener('input', onInputChange);
 
+
 function onInputChange(event){
-    spanEl.textContent = event.currentTarget.value;
+    
+    spanEl.textContent = event.currentTarget.value;  
+
+    if (inputEl.value  === null || inputEl.value  === ''){
+        spanEl.textContent = 'Anonymous';
+    }
 };
+

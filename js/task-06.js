@@ -34,15 +34,12 @@ data-length.
 const inputEl = document.querySelector('input');
 inputEl.addEventListener('blur', onInputBlur);
 
-function onInputBlur(){
-
-  console.log(this.value.length);
-    if (this.getAttribute('data-length') > this.value.length) { 
-      this.classList.remove('valid');
-      this.classList.add('invalid');
-    } else {
-      this.classList.remove('invalid');
-      this.classList.add('valid');
+function onInputBlur(event){
+  inputEl.classList.add('invalid');
+    if (event.currentTarget.value.length === Number(inputEl.getAttribute('data-length'))){ 
+      inputEl.classList.replace('invalid','valid')
     }
 };
+
+
 

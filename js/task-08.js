@@ -26,23 +26,27 @@ submit.
 полей формы методом reset.*/
 
 const form = document.querySelector('.login-form');
+const userInformation = {}; 
 
 form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
     event.preventDefault(); // не перезагружает страницу
-    const formData = new FormData(event.currentTarget); // записывает значения
 
-    formData.forEach((value, name) => {
-      console.log("name", name);
-      console.log("value", value);
-    })
+    const {elements: { password, email }} = event.currentTarget;
 
-    if ( form.email.value === "" || form.password.value === ""  )
+    if ( email.value === "" || password.value === ""  )
     {
       alert ( "Пожалуйста заполните все поля" );
     }
-    return form.reset(); // очищает форму 
+
+    userInformation.password = password.value;
+    userInformation.email = email.valueж
+
+    console.log(userInformation)
+ 
+
+   form.reset(); // очищает форму 
   };
 
 

@@ -8,29 +8,12 @@ const ingredients = [
 ];
 
 
-const firstItem = document.createElement('li');
-firstItem.classList.add('item');
-firstItem.textContent = 'Potatoes';
+for (const ingredient of ingredients) {
+  const itemEl = document.createElement('li');
+  itemEl.classList.add('item');
+  itemEl.textContent = ingredient;
+  const list = document.querySelector('#ingredients');
+  list.after (itemEl);
+}
 
-const secondItem = document.createElement('li');
-secondItem.classList.add('item');
-secondItem.textContent = 'Mushrooms';
 
-const thirdItem = document.createElement('li');
-thirdItem.classList.add('item');
-thirdItem.textContent = 'Garlic';
-
-const fourthItem = document.createElement('li');
-fourthItem.classList.add('item');
-fourthItem.textContent = 'Tomatos';
-
-const fifthItem = document.createElement('li');
-fifthItem.classList.add('item');
-fifthItem.textContent = 'Herbs';
-
-const sixthItem = document.createElement('li');
-sixthItem.classList.add('item');
-sixthItem.textContent = 'Condiments';
-
-const list = document.querySelector('#ingredients');
-list.after (firstItem, secondItem, thirdItem, fourthItem, fifthItem, sixthItem);
